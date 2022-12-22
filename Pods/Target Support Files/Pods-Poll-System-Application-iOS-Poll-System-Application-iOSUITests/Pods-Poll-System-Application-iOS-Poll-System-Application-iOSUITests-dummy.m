@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Poll_System_Application_iOS_Poll_System_Application_iOSUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Poll_System_Application_iOS_Poll_System_Application_iOSUITests
+@end
