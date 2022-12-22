@@ -4,8 +4,9 @@
 //
 //  Created by Hristijan Slavkoski on 12/15/22.
 //
-
-import Firebase
+import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
     
@@ -60,14 +61,38 @@ class RegisterViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             } else {
-                let user = result.user
-                let message = "User created: \(user.email)"
-                let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                //TODO:
-                //NEXT ViewController (voter or user)
+                let user = result?.user
+                if let firebaseUser = Auth.auth().currentUser {
+                    let newUser = User(type: "voter", email: email)
+                    let userDict: [String: Any] = ["type": newUser.type, "email": newUser.email]
+                    let databaseReference = Database.database().reference()
+                    databaseReference.child("user").child(firebaseUser.uid).setValue(userDict) { (error, _) in
+                        if error != nil {
+                            let message = "User failed to create created: \(String(describing: user?.email))"
+                            let alert = UIAlertController(title: "Registration failed", message: message, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        } else {
+                            let message = "User created: \(String(describing: user?.email))"
+                            let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: "registerSuccess", sender: nil)
+                                }
+                            })
+                            alert.addAction(okAction)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "registerSuccess" {
+            let destinationVC = segue.destination as! VoterHomePageViewController
+            destinationVC.source = "RegisterViewController"
         }
     }
 }
