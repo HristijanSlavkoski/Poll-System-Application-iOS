@@ -19,10 +19,11 @@ class AdministratorHomePageViewController: UIViewController {
         super.viewDidAppear(animated)
 
         let message = "Login successful"
-        let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        self.present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            alertController.dismiss(animated: true, completion: nil)
+        }
     }
 
     /*
