@@ -60,7 +60,11 @@ class LoginViewController: UIViewController {
                         }
                         else{
                             //Administrator
-                            DispatchQueue.main.async {
+                            let message = "Login successful"
+                            let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+                            self.present(alertController, animated: true, completion: nil)
+                            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                                alertController.dismiss(animated: true, completion: nil)
                                 self.performSegue(withIdentifier: "loginSuccessAdmin", sender: nil)
                             }
                         }

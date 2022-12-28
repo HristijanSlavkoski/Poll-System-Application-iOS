@@ -45,15 +45,36 @@
 		51546BA129587CCA00419F1A /* CustomLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51546BA029587CCA00419F1A /* CustomLocation.swift */; };
 		51546BA229587CCA00419F1A /* CustomLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51546BA029587CCA00419F1A /* CustomLocation.swift */; };
 		51546BA329587CCA00419F1A /* CustomLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51546BA029587CCA00419F1A /* CustomLocation.swift */; };
+		51556BBF295A017500536A1F /* createNewPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51556BBD295A017500536A1F /* createNewPollCell.swift */; };
+		51556BC0295A017500536A1F /* createNewPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51556BBD295A017500536A1F /* createNewPollCell.swift */; };
+		51556BC1295A017500536A1F /* createNewPollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51556BBD295A017500536A1F /* createNewPollCell.swift */; };
+		51556BC2295A017500536A1F /* createNewPollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51556BBE295A017500536A1F /* createNewPollCell.xib */; };
+		51556BC3295A017500536A1F /* createNewPollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51556BBE295A017500536A1F /* createNewPollCell.xib */; };
+		51556BC4295A017500536A1F /* createNewPollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51556BBE295A017500536A1F /* createNewPollCell.xib */; };
+		51556BCA295A107500536A1F /* createNewQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51556BC8295A107500536A1F /* createNewQuestionCell.swift */; };
+		51556BCB295A107500536A1F /* createNewQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51556BC8295A107500536A1F /* createNewQuestionCell.swift */; };
+		51556BCC295A107500536A1F /* createNewQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51556BC8295A107500536A1F /* createNewQuestionCell.swift */; };
+		51556BCD295A107500536A1F /* createNewQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51556BC9295A107500536A1F /* createNewQuestionCell.xib */; };
+		51556BCE295A107500536A1F /* createNewQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51556BC9295A107500536A1F /* createNewQuestionCell.xib */; };
+		51556BCF295A107500536A1F /* createNewQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51556BC9295A107500536A1F /* createNewQuestionCell.xib */; };
+		5156C139295BB2C1002336B2 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156C138295BB2C1002336B2 /* CustomDate.swift */; };
+		5156C13A295BB2C1002336B2 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156C138295BB2C1002336B2 /* CustomDate.swift */; };
+		5156C13B295BB2C1002336B2 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5156C138295BB2C1002336B2 /* CustomDate.swift */; };
 		5158D94F2954E77F00FC916B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158D94E2954E77F00FC916B /* User.swift */; };
 		5158D9502954E77F00FC916B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158D94E2954E77F00FC916B /* User.swift */; };
 		5158D9512954E77F00FC916B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5158D94E2954E77F00FC916B /* User.swift */; };
+		515F55B8295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F55B7295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift */; };
+		515F55B9295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F55B7295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift */; };
+		515F55BA295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515F55B7295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift */; };
 		5198EE73295905EB00879C98 /* pollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EE71295905EB00879C98 /* pollCell.swift */; };
 		5198EE74295905EB00879C98 /* pollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EE71295905EB00879C98 /* pollCell.swift */; };
 		5198EE75295905EB00879C98 /* pollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EE71295905EB00879C98 /* pollCell.swift */; };
 		5198EE76295905EB00879C98 /* pollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5198EE72295905EB00879C98 /* pollCell.xib */; };
 		5198EE77295905EB00879C98 /* pollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5198EE72295905EB00879C98 /* pollCell.xib */; };
 		5198EE78295905EB00879C98 /* pollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5198EE72295905EB00879C98 /* pollCell.xib */; };
+		5198EE7D29591B7500879C98 /* CreateNewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EE7C29591B7500879C98 /* CreateNewPollViewController.swift */; };
+		5198EE7E29591B7500879C98 /* CreateNewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EE7C29591B7500879C98 /* CreateNewPollViewController.swift */; };
+		5198EE7F29591B7500879C98 /* CreateNewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5198EE7C29591B7500879C98 /* CreateNewPollViewController.swift */; };
 		65B2211565BAE870141DDC40 /* Pods_Poll_System_Application_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB93C47FF61BB7645EAFE5BB /* Pods_Poll_System_Application_iOSTests.framework */; };
 		A5296456C5C039C5E4CFD33A /* Pods_Poll_System_Application_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51E388153EDD53B828E9CA4C /* Pods_Poll_System_Application_iOS.framework */; };
 		B7BACA4169E57E5657E810CB /* Pods_Poll_System_Application_iOS_Poll_System_Application_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBA73B1A047165633647B50 /* Pods_Poll_System_Application_iOS_Poll_System_Application_iOSUITests.framework */; };
@@ -102,9 +123,16 @@
 		51546B9229587BED00419F1A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		51546B9929587C8A00419F1A /* Vote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		51546BA029587CCA00419F1A /* CustomLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocation.swift; sourceTree = "<group>"; };
+		51556BBD295A017500536A1F /* createNewPollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewPollCell.swift; sourceTree = "<group>"; };
+		51556BBE295A017500536A1F /* createNewPollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = createNewPollCell.xib; sourceTree = "<group>"; };
+		51556BC8295A107500536A1F /* createNewQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewQuestionCell.swift; sourceTree = "<group>"; };
+		51556BC9295A107500536A1F /* createNewQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = createNewQuestionCell.xib; sourceTree = "<group>"; };
+		5156C138295BB2C1002336B2 /* CustomDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
 		5158D94E2954E77F00FC916B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		515F55B7295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoterCheckMyVotesViewController.swift; sourceTree = "<group>"; };
 		5198EE71295905EB00879C98 /* pollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pollCell.swift; sourceTree = "<group>"; };
 		5198EE72295905EB00879C98 /* pollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = pollCell.xib; sourceTree = "<group>"; };
+		5198EE7C29591B7500879C98 /* CreateNewPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewPollViewController.swift; sourceTree = "<group>"; };
 		51E388153EDD53B828E9CA4C /* Pods_Poll_System_Application_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poll_System_Application_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB88B235EB79EE1E02E736E /* Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests/Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7173D113A9683D6B828780EF /* Pods-Poll-System-Application-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poll-System-Application-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Poll-System-Application-iOSTests/Pods-Poll-System-Application-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +240,13 @@
 				51546BA029587CCA00419F1A /* CustomLocation.swift */,
 				5198EE71295905EB00879C98 /* pollCell.swift */,
 				5198EE72295905EB00879C98 /* pollCell.xib */,
+				5198EE7C29591B7500879C98 /* CreateNewPollViewController.swift */,
+				51556BBD295A017500536A1F /* createNewPollCell.swift */,
+				51556BBE295A017500536A1F /* createNewPollCell.xib */,
+				51556BC8295A107500536A1F /* createNewQuestionCell.swift */,
+				51556BC9295A107500536A1F /* createNewQuestionCell.xib */,
+				5156C138295BB2C1002336B2 /* CustomDate.swift */,
+				515F55B7295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift */,
 			);
 			path = "Poll-System-Application-iOS";
 			sourceTree = "<group>";
@@ -358,6 +393,8 @@
 				514221DF294817110030B4D2 /* GoogleService-Info.plist in Resources */,
 				514221B5294816CF0030B4D2 /* Assets.xcassets in Resources */,
 				514221B3294816C80030B4D2 /* Main.storyboard in Resources */,
+				51556BCD295A107500536A1F /* createNewQuestionCell.xib in Resources */,
+				51556BC2295A017500536A1F /* createNewPollCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +402,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51556BCE295A107500536A1F /* createNewQuestionCell.xib in Resources */,
 				5198EE77295905EB00879C98 /* pollCell.xib in Resources */,
 				514221E0294817110030B4D2 /* GoogleService-Info.plist in Resources */,
+				51556BC3295A017500536A1F /* createNewPollCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +413,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51556BCF295A107500536A1F /* createNewQuestionCell.xib in Resources */,
 				5198EE78295905EB00879C98 /* pollCell.xib in Resources */,
 				514221E1294817110030B4D2 /* GoogleService-Info.plist in Resources */,
+				51556BC4295A017500536A1F /* createNewPollCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,17 +530,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5198EE7D29591B7500879C98 /* CreateNewPollViewController.swift in Sources */,
 				5141B363294A9DF00005ABB0 /* LoginViewController.swift in Sources */,
 				5135656F29540F2C00BF29DB /* AdministratorHomePageViewController.swift in Sources */,
 				5141B3B1294AB8880005ABB0 /* RegisterViewController.swift in Sources */,
+				515F55B8295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */,
 				514221B0294816C80030B4D2 /* ViewController.swift in Sources */,
 				51546B8C29587B7000419F1A /* Poll.swift in Sources */,
 				51546B9329587BED00419F1A /* Question.swift in Sources */,
+				51556BBF295A017500536A1F /* createNewPollCell.swift in Sources */,
 				5158D94F2954E77F00FC916B /* User.swift in Sources */,
 				514221AC294816C80030B4D2 /* AppDelegate.swift in Sources */,
 				514221AE294816C80030B4D2 /* SceneDelegate.swift in Sources */,
 				5135656829540A8100BF29DB /* VoterHomePageViewController.swift in Sources */,
+				51556BCA295A107500536A1F /* createNewQuestionCell.swift in Sources */,
 				51546B9A29587C8A00419F1A /* Vote.swift in Sources */,
+				5156C139295BB2C1002336B2 /* CustomDate.swift in Sources */,
 				5198EE73295905EB00879C98 /* pollCell.swift in Sources */,
 				51546BA129587CCA00419F1A /* CustomLocation.swift in Sources */,
 			);
@@ -512,11 +558,16 @@
 				5141B3B2294AB8880005ABB0 /* RegisterViewController.swift in Sources */,
 				5198EE74295905EB00879C98 /* pollCell.swift in Sources */,
 				51546B9429587BED00419F1A /* Question.swift in Sources */,
+				5156C13A295BB2C1002336B2 /* CustomDate.swift in Sources */,
+				515F55B9295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */,
 				5141B364294A9DF00005ABB0 /* LoginViewController.swift in Sources */,
+				5198EE7E29591B7500879C98 /* CreateNewPollViewController.swift in Sources */,
 				51546BA229587CCA00419F1A /* CustomLocation.swift in Sources */,
+				51556BCB295A107500536A1F /* createNewQuestionCell.swift in Sources */,
 				5158D9502954E77F00FC916B /* User.swift in Sources */,
 				51546B8D29587B7000419F1A /* Poll.swift in Sources */,
 				514221C3294816D00030B4D2 /* Poll_System_Application_iOSTests.swift in Sources */,
+				51556BC0295A017500536A1F /* createNewPollCell.swift in Sources */,
 				5135656929540A8100BF29DB /* VoterHomePageViewController.swift in Sources */,
 				51546B9B29587C8A00419F1A /* Vote.swift in Sources */,
 				5135657029540F2C00BF29DB /* AdministratorHomePageViewController.swift in Sources */,
@@ -530,11 +581,16 @@
 				5141B3B3294AB8880005ABB0 /* RegisterViewController.swift in Sources */,
 				5198EE75295905EB00879C98 /* pollCell.swift in Sources */,
 				51546B9529587BED00419F1A /* Question.swift in Sources */,
+				5156C13B295BB2C1002336B2 /* CustomDate.swift in Sources */,
+				515F55BA295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */,
 				5141B365294A9DF00005ABB0 /* LoginViewController.swift in Sources */,
+				5198EE7F29591B7500879C98 /* CreateNewPollViewController.swift in Sources */,
 				51546BA329587CCA00419F1A /* CustomLocation.swift in Sources */,
+				51556BCC295A107500536A1F /* createNewQuestionCell.swift in Sources */,
 				5158D9512954E77F00FC916B /* User.swift in Sources */,
 				51546B8E29587B7000419F1A /* Poll.swift in Sources */,
 				514221CE294816D00030B4D2 /* Poll_System_Application_iOSUITests.swift in Sources */,
+				51556BC1295A017500536A1F /* createNewPollCell.swift in Sources */,
 				5135656A29540A8100BF29DB /* VoterHomePageViewController.swift in Sources */,
 				51546B9C29587C8A00419F1A /* Vote.swift in Sources */,
 				5135657129540F2C00BF29DB /* AdministratorHomePageViewController.swift in Sources */,

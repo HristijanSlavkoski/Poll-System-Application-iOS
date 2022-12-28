@@ -11,10 +11,10 @@ class Poll: Codable {
     var title: String
     var creator: String
     var questions: [Question]
-    var start: Date
-    var end: Date
+    var start: CustomDate
+    var end: CustomDate
 
-    init(title: String, creator: String, questions: [Question], start: Date, end: Date) {
+    init(title: String, creator: String, questions: [Question], start: CustomDate, end: CustomDate) {
         self.title = title
         self.creator = creator
         self.questions = questions

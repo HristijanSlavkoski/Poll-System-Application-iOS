@@ -49,21 +49,42 @@ class VoterHomePageViewController: UIViewController {
                     let questionObject = Question(question: question, options: options)
                     questions.append(questionObject)
                 }
-                let start = valueData?["start"] as? NSDictionary
-                let startDate = start?["time"] as? Double
-                let iosStartDate = Date(timeIntervalSince1970: startDate! / 1000.0)
-                let end = valueData?["end"] as? NSDictionary
-                let endDate = end?["time"] as? Double
-                
+                let startAsDictionary = valueData?["start"] as? NSDictionary
+                let startDate = startAsDictionary?["time"] as? Double
+                let endAsDictionary = valueData?["end"] as? NSDictionary
+                let endDate = endAsDictionary?["time"] as? Double
+                //ako sakame da konvertirame od java:
+                //let iosStartDate = CustomDate(time: (startDate! / 1000.0))
+                //let iosEndDate = CustomDate(time: (endDate! / 1000.0))
+                //ako sakame da ne konvertirame od java, tuku od ios:
+                let iosStartDate = CustomDate(time: startDate!)
+                let iosEndDate = CustomDate(time: endDate!)
                 //ZA STORE VO DATA BASE
                 //KIKO TODO
                 //let javaTimestamp = iosDate.timeIntervalSince1970 * 1000.0
                 //let data: [String: Any] = ["timestamp": javaTimestamp]
                 //databaseReference.child("date").setValue(data)
                 
-                let iosEndDate = Date(timeIntervalSince1970: endDate! / 1000.0)
-                let poll = Poll(title: title!, creator: creator!, questions: questions, start: iosStartDate, end: iosEndDate)
-                self.polls.append(poll)
+                
+                
+                
+                print(title!)
+                let currentDate = Date()
+                let endDateAsSwiftDate = Date(timeIntervalSince1970: iosEndDate.time)
+                if endDateAsSwiftDate > currentDate {
+                    //Gi dodavame samo aktivnite glasanja
+                    //znaci aok zavrsuvaat na datum sto e pogolem
+                    self.databaseReference.child("vote").child(dataSnapshot.key).child(self.firebaseUser.uid).observeSingleEvent(of: .value) { snapshotVote in
+                            if !snapshotVote.exists() {
+                                //Ako userot nema glasano na toa
+                                //glasanje, dodaj go toa glasanje
+                                //vo listata
+                                let poll = Poll(title: title!, creator: creator!, questions: questions, start: iosStartDate, end: iosEndDate)
+                                self.polls.append(poll)
+                                self.tableView.reloadData()
+                            }
+                        }
+                }
             }
         })
 
@@ -80,13 +101,18 @@ class VoterHomePageViewController: UIViewController {
         let message: String
         if source == "RegisterViewController" {
             message = "Register successful"
-        } else {
+            let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                alertController.dismiss(animated: true, completion: nil)
+            }
+        } else if source == "LoginViewController" {
             message = "Login successful"
-        }
-        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
-        self.present(alertController, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            alertController.dismiss(animated: true, completion: nil)
+            let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                alertController.dismiss(animated: true, completion: nil)
+            }
         }
         tableView.reloadData()
     }
@@ -136,12 +162,26 @@ extension VoterHomePageViewController: UITableViewDataSource{
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let fromText = formatter.string(from: polls[indexPath.item].start)
-        let toText = formatter.string(from: polls[indexPath.item].end)
+        let startTempDate = Date(timeIntervalSince1970: polls[indexPath.item].start.time)
+        let endTempDate = Date(timeIntervalSince1970: polls[indexPath.item].end.time)
+        let fromText = formatter.string(from: startTempDate)
+        let toText = formatter.string(from: endTempDate)
         
         cell.from?.text = "From:" + fromText
         cell.to?.text = "To: " + toText
-
+        let currentDate = Date()
+        let startDateAsSwiftDate = Date(timeIntervalSince1970: polls[indexPath.item].start.time)
+        if currentDate > startDateAsSwiftDate {
+            //Vote
+            cell.voteResultButton.setTitle("Vote", for: .normal)
+            cell.voteResultButton.backgroundColor = UIColor.green
+        }
+        else {
+            //Coming soon
+            cell.voteResultButton.setTitle("Coming soon", for: .normal)
+            cell.voteResultButton.isEnabled = false
+            cell.voteResultButton.backgroundColor = UIColor.gray
+        }
         return cell
     }
 }

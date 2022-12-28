@@ -6,26 +6,54 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class AdministratorHomePageViewController: UIViewController {
 
+    var firebaseAuth: Auth!
+    var firebaseUser: FirebaseAuth.User!
+    var firebaseDatabase: Database!
+    var databaseReference: DatabaseReference!
+    var logoutButton: UIButton!
+    var createNewPollButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        firebaseAuth = Auth.auth()
+        firebaseUser = firebaseAuth.currentUser
+        firebaseDatabase = Database.database()
+        databaseReference = firebaseDatabase.reference()
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let message = "Login successful"
-        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        
+    }
+    
+    
+    
+    
+    @IBAction func logoutClicked(_ sender: Any) {
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        let toastMessage = "Logout successful"
+        let alertController = UIAlertController(title: "Success", message: toastMessage, preferredStyle: .alert)
         self.present(alertController, animated: true, completion: nil)
+
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             alertController.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "logoutSuccess", sender: nil)
         }
     }
-
+    
+    
     /*
     // MARK: - Navigation
 
