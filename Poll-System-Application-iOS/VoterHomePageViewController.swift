@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import Firebase
 
 class VoterHomePageViewController: UIViewController {
     
@@ -95,6 +96,18 @@ class VoterHomePageViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "pollCell")
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Set up the topic name
+       // let topic = "all_users"
+
+        // Subscribe the user to the topic
+//        Messaging.messaging().subscribe(toTopic: topic) { (error) in
+//            if let error = error {
+//                print("Error subscribing to topic: \(error)")
+//            } else {
+//                print("Subscribed to topic successfully")
+//            }
+//        }
         // Do any additional setup after loading the view.
     }
     

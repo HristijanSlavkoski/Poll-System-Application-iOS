@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import Firebase
 
 class CreateNewPollViewController: UIViewController {
     
@@ -62,6 +63,23 @@ class CreateNewPollViewController: UIViewController {
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
+                    // Set up the topic name
+//                    let topic = "all_users"
+//
+//                    // Set up the notification data
+//                    let notification = ["title": "New Poll", "body": "A new poll is available"]
+//
+//                    // Set up the request data
+//                    let requestData = ["to": "/topics/\(topic)", "notification": notification] as [String : Any]
+//
+//                    // Send the request
+//                    Messaging.send(requestData) { (error) in
+//                        if let error = error {
+//                            print("Error sending notification: \(error)")
+//                        } else {
+//                            print("Notification sent successfully")
+//                        }
+//                    }
                     let message = "Successfully added new poll"
                     let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
                     self.present(alert, animated: true, completion: nil)
