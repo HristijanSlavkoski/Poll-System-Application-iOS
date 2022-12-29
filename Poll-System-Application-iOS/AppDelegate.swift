@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
             Messaging.messaging().delegate = self
             return true
         }
-    }
 
     // MARK: UISceneSession Lifecycle
 
