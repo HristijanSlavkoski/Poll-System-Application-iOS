@@ -36,6 +36,13 @@ class ResultsForAdministratorViewController: UIViewController {
         super.viewDidAppear(animated)
         pollTitle.text = poll?.title
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToMap" {
+            let destinationVC = segue.destination as! MapViewController
+            destinationVC.pollId = self.pollId
+        }
+    }
 }
 
 extension ResultsForAdministratorViewController: UITableViewDelegate {

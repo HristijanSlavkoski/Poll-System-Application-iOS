@@ -418,7 +418,11 @@
                                                 <segue destination="anF-Uo-Ckn" kind="presentation" identifier="goBackToAdministratorHomePage" modalPresentationStyle="fullScreen" id="JhB-y1-prE"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="View map" id="eGM-sO-Rtw"/>
+                                        <barButtonItem key="rightBarButtonItem" title="View map" id="eGM-sO-Rtw">
+                                            <connections>
+                                                <segue destination="78x-Pv-kbi" kind="presentation" identifier="goToMap" modalPresentationStyle="fullScreen" id="tgW-4l-hUn"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -458,6 +462,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFd-MM-JE9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760.86956521739137" y="-1396.2053571428571"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="zsK-0h-aAY">
+            <objects>
+                <viewController storyboardIdentifier="map" useStoryboardIdentifierAsRestorationIdentifier="YES" id="78x-Pv-kbi" customClass="MapViewController" customModule="Poll_System_Application_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Yx-eq-dsP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qyI-2U-yDn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsm-BI-GXJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="zt5-1w-A61">
+                                        <barButtonItem key="leftBarButtonItem" title="Go back" id="1lp-Yy-AhE">
+                                            <connections>
+                                                <segue destination="anF-Uo-Ckn" kind="presentation" identifier="goBack" modalPresentationStyle="fullScreen" id="iDm-nH-3UI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uXr-ts-jTZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xsm-BI-GXJ" firstAttribute="top" secondItem="uXr-ts-jTZ" secondAttribute="top" id="0mo-UE-Ya1"/>
+                            <constraint firstItem="xsm-BI-GXJ" firstAttribute="leading" secondItem="uXr-ts-jTZ" secondAttribute="leading" id="bJN-H9-KWw"/>
+                            <constraint firstItem="uXr-ts-jTZ" firstAttribute="bottom" secondItem="qyI-2U-yDn" secondAttribute="bottom" id="cRT-3s-yK7"/>
+                            <constraint firstItem="qyI-2U-yDn" firstAttribute="top" secondItem="xsm-BI-GXJ" secondAttribute="bottom" id="kan-NM-0Tk"/>
+                            <constraint firstItem="uXr-ts-jTZ" firstAttribute="trailing" secondItem="qyI-2U-yDn" secondAttribute="trailing" id="tQu-tE-uO8"/>
+                            <constraint firstItem="qyI-2U-yDn" firstAttribute="leading" secondItem="uXr-ts-jTZ" secondAttribute="leading" id="uaR-t6-eC9"/>
+                            <constraint firstItem="qyI-2U-yDn" firstAttribute="top" secondItem="xsm-BI-GXJ" secondAttribute="bottom" id="wJH-Tn-cUN"/>
+                            <constraint firstItem="xsm-BI-GXJ" firstAttribute="trailing" secondItem="uXr-ts-jTZ" secondAttribute="trailing" id="yHE-om-ek4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="qyI-2U-yDn" id="uFi-kb-EL7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6B-ke-kN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="-1396"/>
         </scene>
         <!--Voter Home Page View Controller-->
         <scene sceneID="f8v-aD-ahH">
@@ -686,6 +735,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vPv-Q2-2YL"/>
         <segue reference="JhB-y1-prE"/>
         <segue reference="7qr-gd-aIw"/>
         <segue reference="0dT-wN-CZ3"/>

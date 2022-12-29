@@ -101,6 +101,9 @@
 		51A5F619295D59AB0060D470 /* ResultsForAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5F618295D59AB0060D470 /* ResultsForAdministratorViewController.swift */; };
 		51A5F61A295D59AB0060D470 /* ResultsForAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5F618295D59AB0060D470 /* ResultsForAdministratorViewController.swift */; };
 		51A5F61B295D59AB0060D470 /* ResultsForAdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5F618295D59AB0060D470 /* ResultsForAdministratorViewController.swift */; };
+		51A5F636295D63090060D470 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5F635295D63090060D470 /* MapViewController.swift */; };
+		51A5F637295D63090060D470 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5F635295D63090060D470 /* MapViewController.swift */; };
+		51A5F638295D63090060D470 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5F635295D63090060D470 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +169,7 @@
 		51A5F561295D33D70060D470 /* voterResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = voterResultCell.xib; sourceTree = "<group>"; };
 		51A5F5E0295D54880060D470 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A5F618295D59AB0060D470 /* ResultsForAdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsForAdministratorViewController.swift; sourceTree = "<group>"; };
+		51A5F635295D63090060D470 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5AB88B235EB79EE1E02E736E /* Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests/Pods-Poll-System-Application-iOS-Poll-System-Application-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7173D113A9683D6B828780EF /* Pods-Poll-System-Application-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poll-System-Application-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Poll-System-Application-iOSTests/Pods-Poll-System-Application-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81B25A78895F272848011BF5 /* Pods-Poll-System-Application-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poll-System-Application-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Poll-System-Application-iOS/Pods-Poll-System-Application-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				51A5F560295D33D70060D470 /* voterResultCell.swift */,
 				51A5F561295D33D70060D470 /* voterResultCell.xib */,
 				51A5F618295D59AB0060D470 /* ResultsForAdministratorViewController.swift */,
+				51A5F635295D63090060D470 /* MapViewController.swift */,
 			);
 			path = "Poll-System-Application-iOS";
 			sourceTree = "<group>";
@@ -587,6 +592,7 @@
 				51A5F562295D33D70060D470 /* voterResultCell.swift in Sources */,
 				515F55D1295CF3980086ECAE /* votingPollCell.swift in Sources */,
 				5135656829540A8100BF29DB /* VoterHomePageViewController.swift in Sources */,
+				51A5F636295D63090060D470 /* MapViewController.swift in Sources */,
 				51556BCA295A107500536A1F /* createNewQuestionCell.swift in Sources */,
 				51546B9A29587C8A00419F1A /* Vote.swift in Sources */,
 				5156C139295BB2C1002336B2 /* CustomDate.swift in Sources */,
@@ -607,6 +613,7 @@
 				515F55C0295CE5E60086ECAE /* VotingPageViewController.swift in Sources */,
 				5198EE74295905EB00879C98 /* pollCell.swift in Sources */,
 				51546B9429587BED00419F1A /* Question.swift in Sources */,
+				51A5F637295D63090060D470 /* MapViewController.swift in Sources */,
 				5156C13A295BB2C1002336B2 /* CustomDate.swift in Sources */,
 				515F55B9295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */,
 				5141B364294A9DF00005ABB0 /* LoginViewController.swift in Sources */,
@@ -637,6 +644,7 @@
 				515F55C1295CE5E60086ECAE /* VotingPageViewController.swift in Sources */,
 				5198EE75295905EB00879C98 /* pollCell.swift in Sources */,
 				51546B9529587BED00419F1A /* Question.swift in Sources */,
+				51A5F638295D63090060D470 /* MapViewController.swift in Sources */,
 				5156C13B295BB2C1002336B2 /* CustomDate.swift in Sources */,
 				515F55BA295CDA3A0086ECAE /* VoterCheckMyVotesViewController.swift in Sources */,
 				5141B365294A9DF00005ABB0 /* LoginViewController.swift in Sources */,

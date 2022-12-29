@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             // Configure Firebase
             FirebaseApp.configure()
             //Messaging.messaging().delegate = self
+        //GMSServices.provideAPIKey("AIzaSyD0MOP9DN__19uuGIbnId6_HYkdvC8-R7w")
             return true
         }
 
