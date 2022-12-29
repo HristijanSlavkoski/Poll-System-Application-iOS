@@ -280,20 +280,68 @@
             </objects>
             <point key="canvasLocation" x="-981.15942028985512" y="-672.32142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Voting Page View Controller-->
         <scene sceneID="zr1-Yz-ND6">
             <objects>
-                <viewController storyboardIdentifier="voteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n1F-vl-Lmt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="votingPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n1F-vl-Lmt" customClass="VotingPageViewController" customModule="Poll_System_Application_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WEv-18-bh8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cis-6R-BcL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="XJv-BB-f3X">
+                                        <barButtonItem key="leftBarButtonItem" title="Go back" id="Omt-Dn-NpK">
+                                            <connections>
+                                                <segue destination="YKj-HQ-aMR" kind="presentation" identifier="goBackToHomePage" modalPresentationStyle="fullScreen" id="k92-d5-neg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" id="Lz7-JU-8uQ">
+                                            <connections>
+                                                <action selector="submitVoteClicked:" destination="n1F-vl-Lmt" id="Q7z-rb-9Ry"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poll title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQA-77-46t">
+                                <rect key="frame" x="0.0" y="88" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tme-wk-Eaf">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Uqi-so-VeK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tme-wk-Eaf" firstAttribute="top" secondItem="dQA-77-46t" secondAttribute="bottom" id="6MF-8c-BcS"/>
+                            <constraint firstItem="dQA-77-46t" firstAttribute="trailing" secondItem="Uqi-so-VeK" secondAttribute="trailing" id="Cxa-aJ-Iop"/>
+                            <constraint firstAttribute="bottom" secondItem="Tme-wk-Eaf" secondAttribute="bottom" id="O8X-d8-YQE"/>
+                            <constraint firstItem="Tme-wk-Eaf" firstAttribute="leading" secondItem="Uqi-so-VeK" secondAttribute="leading" id="OST-Do-5oh"/>
+                            <constraint firstItem="Tme-wk-Eaf" firstAttribute="top" secondItem="dQA-77-46t" secondAttribute="bottom" id="PLH-em-IgP"/>
+                            <constraint firstItem="cis-6R-BcL" firstAttribute="top" secondItem="Uqi-so-VeK" secondAttribute="top" id="iRb-cw-nOS"/>
+                            <constraint firstItem="cis-6R-BcL" firstAttribute="trailing" secondItem="Uqi-so-VeK" secondAttribute="trailing" id="jRD-qQ-bhv"/>
+                            <constraint firstItem="dQA-77-46t" firstAttribute="top" secondItem="cis-6R-BcL" secondAttribute="bottom" id="lxh-Jx-28F"/>
+                            <constraint firstItem="cis-6R-BcL" firstAttribute="leading" secondItem="Uqi-so-VeK" secondAttribute="leading" id="nBf-IQ-41Z"/>
+                            <constraint firstItem="dQA-77-46t" firstAttribute="leading" secondItem="Uqi-so-VeK" secondAttribute="leading" id="nqK-Y6-kNJ"/>
+                            <constraint firstItem="dQA-77-46t" firstAttribute="top" secondItem="cis-6R-BcL" secondAttribute="bottom" id="p1Q-IX-shR"/>
+                            <constraint firstItem="Tme-wk-Eaf" firstAttribute="trailing" secondItem="Uqi-so-VeK" secondAttribute="trailing" id="qXS-ee-aYt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pollTitle" destination="dQA-77-46t" id="sF9-Y2-Jrb"/>
+                        <outlet property="questions" destination="Tme-wk-Eaf" id="f6F-Gh-d5A"/>
+                        <segue destination="YKj-HQ-aMR" kind="presentation" identifier="successfullySubmitedVote" modalPresentationStyle="fullScreen" id="7qr-gd-aIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lzO-N9-bvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113" y="-1396"/>
+            <point key="canvasLocation" x="-113.04347826086958" y="-1396.2053571428571"/>
         </scene>
         <!--Voter Home Page View Controller-->
         <scene sceneID="f8v-aD-ahH">
@@ -341,6 +389,7 @@
                     <connections>
                         <outlet property="tableView" destination="LvL-Dw-20S" id="wbv-YP-qkz"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSuccess" modalPresentationStyle="fullScreen" id="z0E-2r-qLt"/>
+                        <segue destination="n1F-vl-Lmt" kind="presentation" identifier="goToVotingPage" modalPresentationStyle="fullScreen" id="V04-1v-gDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSH-3s-Wu4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -512,8 +561,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="y8j-jW-EgW"/>
-        <segue reference="sfs-Sv-DqR"/>
-        <segue reference="sb9-4e-iZQ"/>
+        <segue reference="Cx8-d3-s5R"/>
+        <segue reference="z0E-2r-qLt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>

@@ -34,9 +34,6 @@ class AdministratorHomePageViewController: UIViewController {
         
     }
     
-    
-    
-    
     @IBAction func logoutClicked(_ sender: Any) {
         do {
             try firebaseAuth.signOut()

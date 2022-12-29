@@ -20,6 +20,7 @@ class VoterHomePageViewController: UIViewController {
     var logoutButton: UIButton!
     var checkMyVotes: UIButton!
     var polls = [Poll]()
+    var pollIds = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class VoterHomePageViewController: UIViewController {
         databaseReference.child("poll").observeSingleEvent(of: .value, with: { (snapshot) in
             for dataSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
                 //let poll = snapshot.value as? [Poll: Any]
+                let pollId = dataSnapshot.key as? String
                 let valueData = dataSnapshot.value as? NSDictionary
 
                 //let username = value?["username"] as? String ?? ""
@@ -81,6 +83,7 @@ class VoterHomePageViewController: UIViewController {
                                 //vo listata
                                 let poll = Poll(title: title!, creator: creator!, questions: questions, start: iosStartDate, end: iosEndDate)
                                 self.polls.append(poll)
+                                self.pollIds.append(pollId!)
                                 self.tableView.reloadData()
                             }
                         }
@@ -133,6 +136,16 @@ class VoterHomePageViewController: UIViewController {
             self.performSegue(withIdentifier: "logoutSuccess", sender: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToVotingPage" {
+            let destinationVC = segue.destination as! VotingPageViewController
+            let polltoBeSend = sender as! PollToBeSent
+            destinationVC.poll = polltoBeSend.poll
+            destinationVC.pollId = polltoBeSend.pollId
+        }
+    }
+    
         /*
      // MARK: - Navigation
      
@@ -181,6 +194,10 @@ extension VoterHomePageViewController: UITableViewDataSource{
             cell.voteResultButton.setTitle("Coming soon", for: .normal)
             cell.voteResultButton.isEnabled = false
             cell.voteResultButton.backgroundColor = UIColor.gray
+        }
+        cell.voteResultClick = {
+            let pollToBeSent = PollToBeSent(poll: self.polls[indexPath.item], pollId: self.pollIds[indexPath.item])
+            self.performSegue(withIdentifier: "goToVotingPage", sender: pollToBeSent)
         }
         return cell
     }

@@ -13,6 +13,7 @@ class pollCell: UITableViewCell {
     @IBOutlet var from: UILabel!
     @IBOutlet var to: UILabel!
     @IBOutlet var voteResultButton: UIButton!
+    var voteResultClick: (() -> Void)? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,4 +26,8 @@ class pollCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    @IBAction func voteResultButtonClicked(_ sender: Any) {
+        voteResultClick?()
+    }
 }

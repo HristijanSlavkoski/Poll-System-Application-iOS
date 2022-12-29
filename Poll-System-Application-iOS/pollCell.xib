@@ -27,6 +27,9 @@
                         <state key="normal" title="Button">
                             <color key="titleColor" systemColor="labelColor"/>
                         </state>
+                        <connections>
+                            <action selector="voteResultButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vK6-jp-lnn"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN2-Xx-lB9">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="23"/>

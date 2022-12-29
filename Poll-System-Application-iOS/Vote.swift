@@ -10,10 +10,10 @@ import Foundation
 
 class Vote: Codable {
     var answers: [String]
-    var time: Date
+    var time: CustomDate
     var location: CustomLocation
 
-    init(answers: [String], time: Date, location: CustomLocation) {
+    init(answers: [String], time: CustomDate, location: CustomLocation) {
         self.answers = answers
         self.time = time
         self.location = location
