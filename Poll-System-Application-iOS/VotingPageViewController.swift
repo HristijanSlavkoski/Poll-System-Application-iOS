@@ -111,14 +111,8 @@ class VotingPageViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coord = manager.location?.coordinate {
-            //let latitude = location.coordinate.latitude
-            //let longitude = location.coordinate.longitude
             let center = CLLocationCoordinate2D(latitude: coord.latitude, longitude: coord.longitude)
-            print("eeee")
-            print(coord.latitude)
             userLocation = center
-            //locationCompletion?(latitude, longitude)
-            //locationManager.stopUpdatingLocation()
         }
     }
 }

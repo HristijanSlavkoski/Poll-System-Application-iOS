@@ -7,19 +7,19 @@
 
 import UIKit
 import FirebaseCore
+import Firebase
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        FirebaseApp.configure()
-        
-        
-        
-        return true
+            // Configure Firebase
+            FirebaseApp.configure()
+            Messaging.messaging().delegate = self
+            return true
+        }
     }
 
     // MARK: UISceneSession Lifecycle

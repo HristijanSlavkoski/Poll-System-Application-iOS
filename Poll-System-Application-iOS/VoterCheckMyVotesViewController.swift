@@ -17,6 +17,7 @@ class VoterCheckMyVotesViewController: UIViewController {
     var firebaseDatabase: Database!
     var databaseReference: DatabaseReference!
     var polls = [Poll]()
+    var pollIds = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class VoterCheckMyVotesViewController: UIViewController {
         
         databaseReference.child("poll").observeSingleEvent(of: .value, with: { (snapshot) in
             for dataSnapshot in snapshot.children.allObjects as! [DataSnapshot] {
+                let pollId = dataSnapshot.key as? String
                 let valueData = dataSnapshot.value as? NSDictionary
                 let title = valueData?["title"] as? String
                 let creator = valueData?["creator"] as? String
@@ -52,6 +54,7 @@ class VoterCheckMyVotesViewController: UIViewController {
                         //dodaj go
                         let poll = Poll(title: title!, creator: creator!, questions: questions, start: iosStartDate, end: iosEndDate)
                         self.polls.append(poll)
+                        self.pollIds.append(pollId!)
                         self.tableView.reloadData()
                     }
                     
@@ -63,6 +66,15 @@ class VoterCheckMyVotesViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "pollCell")
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResults" {
+            let destinationVC = segue.destination as! ResultsForVoterViewController
+            let polltoBeSend = sender as! PollToBeSent
+            destinationVC.poll = polltoBeSend.poll
+            destinationVC.pollId = polltoBeSend.pollId
+        }
     }
 }
 
@@ -102,6 +114,10 @@ extension VoterCheckMyVotesViewController: UITableViewDataSource{
             cell.voteResultButton.setTitle("Not finished yet", for: .normal)
             cell.voteResultButton.isEnabled = false
             cell.voteResultButton.backgroundColor = UIColor.gray
+        }
+        cell.voteResultClick = {
+            let pollToBeSent = PollToBeSent(poll: self.polls[indexPath.item], pollId: self.pollIds[indexPath.item])
+            self.performSegue(withIdentifier: "goToResults", sender: pollToBeSent)
         }
         return cell
     }

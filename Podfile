@@ -6,6 +6,7 @@ target 'Poll-System-Application-iOS' do
   use_frameworks!
   pod 'FirebaseAuth'
   pod 'FirebaseDatabase'
+  pod 'Firebase/Messaging'
 
   # Pods for Poll-System-Application-iOS
 

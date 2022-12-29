@@ -234,6 +234,63 @@
             </objects>
             <point key="canvasLocation" x="761" y="60"/>
         </scene>
+        <!--Results For Voter View Controller-->
+        <scene sceneID="t83-bh-rbP">
+            <objects>
+                <viewController storyboardIdentifier="resultsForVoter" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qom-6b-7vp" customClass="ResultsForVoterViewController" customModule="Poll_System_Application_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DO3-Ro-vVi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-JI-vaD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="CUd-9T-CrC">
+                                        <barButtonItem key="leftBarButtonItem" title="Go Back" id="oUK-Pb-jEi">
+                                            <connections>
+                                                <segue destination="ezT-4N-dmH" kind="presentation" identifier="goBackToMyVotes" modalPresentationStyle="fullScreen" id="0dT-wN-CZ3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z2S-PD-WnF">
+                                <rect key="frame" x="0.0" y="118" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poll title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df7-w7-U11">
+                                <rect key="frame" x="0.0" y="88" width="414" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g1R-U4-ffh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aQT-JI-vaD" firstAttribute="top" secondItem="g1R-U4-ffh" secondAttribute="top" id="1vq-Oa-fUd"/>
+                            <constraint firstAttribute="bottom" secondItem="Z2S-PD-WnF" secondAttribute="bottom" id="Q62-R0-iXY"/>
+                            <constraint firstItem="df7-w7-U11" firstAttribute="leading" secondItem="g1R-U4-ffh" secondAttribute="leading" id="cKU-N6-pTI"/>
+                            <constraint firstItem="Z2S-PD-WnF" firstAttribute="trailing" secondItem="g1R-U4-ffh" secondAttribute="trailing" id="cKi-7i-Ovu"/>
+                            <constraint firstItem="Z2S-PD-WnF" firstAttribute="leading" secondItem="g1R-U4-ffh" secondAttribute="leading" id="kly-4N-n5E"/>
+                            <constraint firstItem="df7-w7-U11" firstAttribute="trailing" secondItem="g1R-U4-ffh" secondAttribute="trailing" id="mB1-zy-Gsz"/>
+                            <constraint firstItem="df7-w7-U11" firstAttribute="top" secondItem="aQT-JI-vaD" secondAttribute="bottom" id="n3I-QO-gWs"/>
+                            <constraint firstItem="aQT-JI-vaD" firstAttribute="trailing" secondItem="g1R-U4-ffh" secondAttribute="trailing" id="qRW-9I-ijs"/>
+                            <constraint firstItem="aQT-JI-vaD" firstAttribute="leading" secondItem="g1R-U4-ffh" secondAttribute="leading" id="qmg-fX-dPV"/>
+                            <constraint firstItem="df7-w7-U11" firstAttribute="top" secondItem="aQT-JI-vaD" secondAttribute="bottom" id="rG0-93-LKc"/>
+                            <constraint firstItem="Z2S-PD-WnF" firstAttribute="top" secondItem="df7-w7-U11" secondAttribute="bottom" id="sNT-n7-Nha"/>
+                            <constraint firstItem="Z2S-PD-WnF" firstAttribute="top" secondItem="df7-w7-U11" secondAttribute="bottom" id="vLm-13-WJ7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pollTitle" destination="df7-w7-U11" id="hC5-Ym-eqv"/>
+                        <outlet property="questions" destination="Z2S-PD-WnF" id="Yv6-Wt-6ck"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Te0-1a-li2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1855.072463768116" y="-672.32142857142856"/>
+        </scene>
         <!--Voter Check My Votes View Controller-->
         <scene sceneID="c7m-ov-Y00">
             <objects>
@@ -274,6 +331,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="VFT-WN-T4m" id="tfn-0u-6TC"/>
+                        <segue destination="Qom-6b-7vp" kind="presentation" identifier="goToResults" modalPresentationStyle="fullScreen" id="Gvm-Kf-bSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2e-yV-h0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -561,7 +619,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="y8j-jW-EgW"/>
-        <segue reference="Cx8-d3-s5R"/>
+        <segue reference="7qr-gd-aIw"/>
+        <segue reference="0dT-wN-CZ3"/>
         <segue reference="z0E-2r-qLt"/>
     </inferredMetricsTieBreakers>
     <resources>
